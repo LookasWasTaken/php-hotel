@@ -1,0 +1,13 @@
+.form-check-input{
+    width: 20px;
+    height: 20px;
+    aspect-ratio: 1/1;
+}
+
+.inputNumber{
+    width: 20%;
+}
+
+table{
+    margin: 1.5rem auto;
+}
