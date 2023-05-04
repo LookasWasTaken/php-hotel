@@ -87,22 +87,23 @@ $parking = $_GET["parking"];
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($hotels as $hotel) : 
+            <?php foreach ($hotels as $hotel) :
                 if (($parking === null || $hotel["parking"] === true) && ($rating === null || $hotel["vote"] >= $rating)) : ?>
-                <tr> 
-                    <?php foreach ($hotel as $info) : ?>
-                        <td class="text-center p-3 border">
-                            <?php if ($info !== true && $info !== false) {
-                                echo $info;
-                            } elseif ($info === true) {
-                                echo "Yes";
-                            } else {
-                                echo "No";
-                            } ?>
-                        </td>
-                    <?php endforeach; ?>
-                </tr>
-                <?php endif; endforeach; ?>
+                    <tr>
+                        <?php foreach ($hotel as $info) : ?>
+                            <td class="text-center p-3 border">
+                                <?php if ($info !== true && $info !== false) {
+                                    echo $info;
+                                } elseif ($info === true) {
+                                    echo "Yes";
+                                } else {
+                                    echo "No";
+                                } ?>
+                            </td>
+                        <?php endforeach; ?>
+                    </tr>
+                <?php endif; ?>
+            <?php endforeach; ?>
         </tbody>
     </table>
 
