@@ -89,18 +89,39 @@ $parking = $_GET["parking"];
         <tbody>
             <?php foreach ($hotels as $hotel) :
                 if (($parking === null || $hotel["parking"] === true) && ($rating === null || $hotel["vote"] >= $rating)) : ?>
-                    <tr>
-                        <?php foreach ($hotel as $info) : ?>
+<!--                     <tr>
+                        <?php // foreach ($hotel as $info) : ?>
                             <td class="text-center p-3 border">
-                                <?php if ($info !== true && $info !== false) {
+                                <?php /* if ($info !== true && $info !== false) {
                                     echo $info;
                                 } elseif ($info === true) {
                                     echo "Yes";
                                 } else {
                                     echo "No";
-                                } ?>
+                                }  */?>
                             </td>
-                        <?php endforeach; ?>
+                        <?php // endforeach; ?>
+                    </tr> -->
+                    <tr>
+                        <td class="text-center p-3 border">
+                            <?= $hotel["name"] ?>
+                        </td>
+                        <td class="text-center p-3 border">
+                            <?= $hotel["description"] ?>
+                        </td>
+                        <td class="text-center p-3 border">
+                            <?php if ($hotel["parking"] === true) {
+                                echo "Yes";
+                            } else {
+                                echo "No";
+                            } ?>
+                        </td>
+                        <td class="text-center p-3 border">
+                            <?= $hotel["vote"] ?>
+                        </td>
+                        <td class="text-center p-3 border">
+                            <?= $hotel["distance_to_center"] ?>
+                        </td>
                     </tr>
                 <?php endif; ?>
             <?php endforeach; ?>
